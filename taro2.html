@@ -12,7 +12,7 @@
     body {
         font-family: 'Roboto', sans-serif; /* Используем шрифт "Roboto" */
         text-align: center;
-        background-image: url('https://psv4.userapi.com/c235031/u344270055/docs/d56/a5278cdc085b/snapedit_1711805821521.png?extra=Y84V48irV9lBMG6TnQ3Y5qoHUglo5iwYbt5WLyVKYtEtXaKDE-6j7EyyZN3CqejOp57gDHeYz6eoXt0tQhZIeaGoN_9E_sfQTX7I609yw9Nz3vrmcKoZzcfeGuCKkeqZ_TvvKSrQ0noAF_X_3UjBIBo4'); /* Путь к вашей фоновой картинке */
+        background-image: url('svet.png'); /* Путь к вашей фоновой картинке */
     background-size: cover;
     background-attachment: fixed;
     
@@ -21,16 +21,30 @@
     }
     
     button {
-    background-color: #3498db;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    margin: 10px;
-    cursor: pointer;
-    font-family: 'Roboto', sans-serif; /* Применяем выбранный шрифт */
-    font-size: 16px;
-}
+        font-family: Roboto, sans-serif;
+        font-weight: 0;
+        font-size: 14px;
+        color: #fff;
+        background-color: #e9c46a;
+        padding: 10px 30px;
+        border: 2px solid #0066cc;
+        box-shadow: rgb(0, 0, 0) 0px 0px 0px 0px;
+        border-radius: 50px;
+        transition : 1000ms;
+        transform: translateY(0);
+        display: center;
+        flex-direction: row;
+        align-items: center;
+        cursor: pointer;
+    }
+    .button:hover{
+        transition : 1000ms;
+        padding: 10px 50px;
+        transform : translateY(-0px);
+        background-color: #fff;
+        color: #0066cc;
+        border: solid 2px #0066cc;
+    }   
 
     .main-menu, .card-container, .yes-no-page {
         margin-top: 50px;
@@ -39,34 +53,34 @@
 </style>
 </head>
 <body>
-    <button onclick="changeBackground()">Изменить фон</button>
+    <button class="button" onclick="changeBackground()">Изменить фон</button>
 <div class="main-menu" style="display: block;">
     <h1>Гадание Таро - Расклады на картах онлайн</h1>
-    <button onclick="showDailyCard()">Карта дня</button>
-    <button onclick="showYesNoPage()">Да или Нет</button>
+    <button class="button" onclick="showDailyCard()">Карта дня</button>
+    <button class="button" onclick="showYesNoPage()">Да или Нет</button>
 </div>
 
 <div class="card-container">
     <img id="cardImage" src="" alt="Card Image">
     <h2 id="cardTitle"></h2>
     <p id="cardDescription"></p>
-    <button onclick="backToMainMenu()">Вернуться в главное меню</button>
+    <button class="button" onclick="backToMainMenu()">Вернуться в главное меню</button>
 </div>
 
 <div class="yes-no-page" style="text-align: center;">
     <p>Задай вопрос, на который можно ответить "ДА" или "НЕТ" и нажми кнопку ниже</p>
-    <button onclick="showYesNoCard()">Получить ответ</button>
+    <button class="button" onclick="showYesNoCard()">Получить ответ</button>
     <img id="yesNoCardImage" src="https://trikky.ru/wp-content/blogs.dir/1/files/2013/03/112.jpg" alt="Yes No Card Image" style="display: block; margin: 0 auto;">
     <h2 id="yesNoCardTitle"></h2>
     <p id="yesNoCardDescription"></p>
-    <button onclick="backToMainMenu()">Вернуться в главное меню</button>
+    <button class="button" onclick="backToMainMenu()">Вернуться в главное меню</button>
 </div>
 
 <script>
     function changeBackground() {
     const body = document.querySelector('body');
-    const backgroundImage1 = 'url("https://psv4.userapi.com/c235031/u344270055/docs/d37/7a661d1e087c/snapedit_1711805668906.png?extra=C8vppsFgR0RpQdbwxHZnY7FZqP_zvuZsO9o6Nnj5xPLuvskskqMM5SggC1H3lqOXg-G9Vy2i-Hp-Szw6dpV05wunrsBYjTXJ51g_NVdZsX3ItE4VviGuauCvEe5Yf8SOyYkxzc37xpa0ebZaMxLYmywp")'; // Путь к первой фоновой картинке
-    const backgroundImage2 = 'url("https://psv4.userapi.com/c235031/u344270055/docs/d56/a5278cdc085b/snapedit_1711805821521.png?extra=Y84V48irV9lBMG6TnQ3Y5qoHUglo5iwYbt5WLyVKYtEtXaKDE-6j7EyyZN3CqejOp57gDHeYz6eoXt0tQhZIeaGoN_9E_sfQTX7I609yw9Nz3vrmcKoZzcfeGuCKkeqZ_TvvKSrQ0noAF_X_3UjBIBo4")'; // Путь ко второй фоновой картинке
+    const backgroundImage1 = 'url("svet.png")'; // Путь к первой фоновой картинке
+    const backgroundImage2 = 'url("tma.png")'; // Путь ко второй фоновой картинке
     
     // Проверяем текущий фон и меняем на другую картинку
     if (body.style.backgroundImage === backgroundImage1) 
