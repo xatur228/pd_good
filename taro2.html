@@ -15,9 +15,9 @@
         background-image: url('svet.png'); /* Путь к вашей фоновой картинке */
     background-size: cover;
     background-attachment: fixed;
-    
     background-position: center center;
     background-repeat: no-repeat;
+    text-shadow: 1px 1px 1px rgb(140, 136, 143); 
     }
     
     button {
@@ -77,7 +77,8 @@
 </div>
 <div><p id="digital_watch" style="color: #f00; font-size: 120%; font-weight: bold;"></p></div>
 <script>
-    function changeBackground() {
+    function changeBackground()
+{
     const body = document.querySelector('body');
     const backgroundImage1 = 'url("svet.png")'; // Путь к первой фоновой картинке
     const backgroundImage2 = 'url("tma.png")'; // Путь ко второй фоновой картинке
@@ -86,12 +87,17 @@
     if (body.style.backgroundImage === backgroundImage1) 
     {
         body.style.backgroundImage = backgroundImage2;
+        body.style.color = "white";
+        body.style.textShadow = "10px 10px 10px black"; 
     } 
     else
     {
         body.style.backgroundImage = backgroundImage1;
+        body.style.color = "black";
+        body.style.textShadow = "1px 1px 1px rgb(140, 136, 143)"; 
     }
 }
+
     const cards = [
         { title: "Шут", description: "Шут – это человек, начинающий новое движение и вступающий на жизненный путь, который ему пока неизвестен. Это юный, любопытный, открытый, бесшабашный человек, которому чуждо чувство опасности и осторожности. Шут бросается в омут жизни, не зная о ней ничего, не думая о житейских проблемах и опасностях, которые его могут подстерегать на пути. Он ищет перемен и постоянно экспериментирует с реальностью. Шут энергичен, оптимистичен, ощущает силу и радость, ведь его впереди ожидает столько интересных и увлекательных приключений. Возможно, ему предстоят неожиданности и незапланированные события, но это не страшит Шута.", image: "AllCards/Шут.jpg" },
         { title: "Умеренность", description: "Счастливая карта, характеризующая красоту, радость, тишину и гармонию, свет и восстановление. Карта благотворно влияет на человека и его деятельность. Человеку предстоит пройти какое-то испытание. Благодаря аркану, разногласия и напряженные ситуации будут проходить в более смягченной форме. Независимо от обстоятельств, можно рассчитывать на то, что все утихомирится и прояснится. Не будет безвыходных ситуаций. Если что-то казалось недосягаемым, совсем скоро случится. Но главное, чтобы человек проявил свое терпение и самоконтроль. Карта подразумевает адаптацию и компромиссы, смирение и покорность.", image: "AllCards/Умеренность.jpg" },
